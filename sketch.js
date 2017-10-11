@@ -7,7 +7,7 @@ let cols,rows,xscl,yscl;
 let box,note;
 
 function setup(){
-  canvas = createCanvas(window.innerWidth, window.innerHeight);
+  canvas = createCanvas(displayWidth, displayHeight);
 
   tClef = true;
 
