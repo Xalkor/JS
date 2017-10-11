@@ -19,6 +19,7 @@ function setup(){
 }
 
 function draw(){
+  
 
   image(tClef, 0, height/2, tClef.width/2, tClef.height/2);
 
