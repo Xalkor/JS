@@ -20,7 +20,7 @@ function setup(){
 
 function draw(){
   
-
+ellipse(width/2,height/2,45,45);
   image(tClef, 0, height/2, tClef.width/2, tClef.height/2);
 
   let c = cell();
