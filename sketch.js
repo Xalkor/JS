@@ -20,7 +20,7 @@ function setup(){
 
 function draw(){
 
-  image(tClef,width/2,height/2);
+  image(tClef,mouseX,mouseY);
 
   let c = cell();
   background(255);
