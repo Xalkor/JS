@@ -126,14 +126,14 @@ function draw() {
 
   clickerStore.html("buy clicker (cps +1 for " + clickerPrice + " circles)");
   pokerStore.html("buy poker (cps +5 for " + pokerPrice + " circles)");
-  stabberStore.html("buy stabber (cps +20 for " + stabberPrice + " circles)");
+  stabberStore.html("buy stabber (cps +100 for " + stabberPrice + " circles)");
   mouseEnhancerStore.html("buy mouse enhancer (click value +1 for " + mouseEnhancerPrice + " circles)");
 
   if(s != second()){
     circles+=clickerNum;
     circles+=pokerNum*5;
-    circles+=stabberNum*20;
-    cps = clickerNum + (pokerNum*5) + (stabberNum*20);
+    circles+=stabberNum*100;
+    cps = clickerNum + (pokerNum*5) + (stabberNum*100);
     s = second();
   }
   clickValDis[0].update();
