@@ -34,7 +34,6 @@ let input;
 let button;
 let passInput;
 
-
 let button1;
 let greeting;
 let greeting1;
