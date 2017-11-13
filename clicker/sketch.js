@@ -125,8 +125,8 @@ function draw() {
   mouseEnhancerDis.html("mouse enhancers: "+ mouseEnhancerNum);
 
   clickerStore.html("buy clicker (cps +1 for " + clickerPrice + " circles)");
-  pokerStore.html("buy poker (cps +25 for " + pokerPrice + " circles)");
-  stabberStore.html("buy stabber (cps +100 for " + stabberPrice + " circles)");
+  pokerStore.html("buy poker (cps +20 for " + pokerPrice + " circles)");
+  stabberStore.html("buy stabber (cps +110 for " + stabberPrice + " circles)");
   mouseEnhancerStore.html("buy mouse enhancer (click value +1 for " + mouseEnhancerPrice + " circles)");
 
   if(s != second()){
