@@ -133,7 +133,7 @@ function draw() {
     circles+=clickerNum;
     circles+=pokerNum*20;
     circles+=stabberNum*100;
-    cps = clickerNum + (pokerNum*5) + (stabberNum*20);
+    cps = clickerNum + (pokerNum*20) + (stabberNum*100);
     s = second();
   }
   clickValDis[0].update();
