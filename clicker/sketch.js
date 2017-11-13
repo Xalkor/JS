@@ -125,15 +125,15 @@ function draw() {
   mouseEnhancerDis.html("mouse enhancers: "+ mouseEnhancerNum);
 
   clickerStore.html("buy clicker (cps +1 for " + clickerPrice + " circles)");
-  pokerStore.html("buy poker (cps +5 for " + pokerPrice + " circles)");
+  pokerStore.html("buy poker (cps +20 for " + pokerPrice + " circles)");
   stabberStore.html("buy stabber (cps +100 for " + stabberPrice + " circles)");
   mouseEnhancerStore.html("buy mouse enhancer (click value +1 for " + mouseEnhancerPrice + " circles)");
 
   if(s != second()){
     circles+=clickerNum;
-    circles+=pokerNum*5;
+    circles+=pokerNum*20;
     circles+=stabberNum*100;
-    cps = clickerNum + (pokerNum*5) + (stabberNum*100);
+    cps = clickerNum + (pokerNum*5) + (stabberNum*20);
     s = second();
   }
   clickValDis[0].update();
@@ -158,7 +158,7 @@ function buyClicker(){
   if(circles >= clickerPrice){
     clickerNum++;
     circles-=clickerPrice;
-    clickerPrice += round(clickerPrice/10);
+    clickerPrice += round(clickerPrice/30);
   }
 }
 
@@ -166,7 +166,7 @@ function buyPoker(){
   if(circles >= pokerPrice){
     pokerNum++;
     circles-=pokerPrice;
-    pokerPrice += round(pokerPrice/10);
+    pokerPrice += round(pokerPrice/30);
   }
 }
 
@@ -174,7 +174,7 @@ function buyStabber(){
   if(circles >= stabberPrice){
     stabberNum++;
     circles-=stabberPrice;
-    stabberPrice += round(stabberPrice/10);
+    stabberPrice += round(stabberPrice/30);
   }
 }
 
@@ -182,7 +182,7 @@ function buyMouseEnhancer(){
   if(circles >= mouseEnhancerPrice){
     mouseEnhancerNum++;
     circles-=mouseEnhancerPrice;
-    mouseEnhancerPrice += round(mouseEnhancerPrice/10);
+    mouseEnhancerPrice += round(mouseEnhancerPrice/30);
     clickVal = mouseEnhancerNum + 1;
   }
 }
@@ -210,6 +210,21 @@ function validateCheetCode(){
     stabberNum = int(vals[3]);
     mouseEnhancerNum = int(vals[4]);
     clickVal = int(vals[4]) + 1;
+
+    for(let i = 0; i < clickerNum; i++){
+      clickerPrice += round(clickerPrice/30);
+    }
+    for(let i = 0; i < pokerNum; i++){
+      pokerPrice += round(pokerrPrice/30);
+    }
+    for(let i = 0; i < stabberNum; i++){
+      stabberPrice += round(stabberPrice/30);
+    }
+    for(let i = 0; i < mouseEnhancerNum; i++){
+      mouseEnhancerPrice += round(mouseEnhancerPrice/30);
+    }
+
+
   }
 }
 }
