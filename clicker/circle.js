@@ -2,12 +2,13 @@ function circle(x, y, r) {
   this.x = x;
   this.y = y;
   this.r = r;
-  this.color = 0;
+  this.color = createVector(0,255,255);
 }
 
 circle.prototype.show = function() {
   noStroke();
-  fill(this.color);
+  colorMode(HSB);
+  fill(this.color.x,this.color.y,this.color.z);
   ellipse(this.x,this.y,this.r*2);
 }
 circle.prototype.isMouseOver = function() {
