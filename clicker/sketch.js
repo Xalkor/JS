@@ -3,6 +3,7 @@ let s = 0;
 let circlesDis;
 let circles = 0;
 let clickVal = 1;
+
 let cps = 0;
 let cpsDis;
 
