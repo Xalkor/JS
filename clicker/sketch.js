@@ -157,7 +157,7 @@ function buyClicker(){
   if(circles >= clickerPrice){
     clickerNum++;
     circles-=clickerPrice;
-    clickerPrice += round(clickerPrice/30);
+    clickerPrice += round(clickerPrice/10);
   }
 }
 
@@ -211,7 +211,7 @@ function validateCheetCode(){
     clickVal = int(vals[4]) + 1;
 
     for(let i = 0; i < clickerNum; i++){
-      clickerPrice += round(clickerPrice/30);
+      clickerPrice += round(clickerPrice/10);
     }
     for(let i = 0; i < pokerNum; i++){
       pokerPrice += round(pokerrPrice/30);
