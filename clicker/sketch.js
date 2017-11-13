@@ -148,6 +148,7 @@ function mouseReleased() {
   if(c.isMouseOver()){
     circles+=clickVal;
     c.r-=3;
+    c.color.x = (c.color.x + 5)%360;
     clickValDis[cvdIndex] = new floatText(clickVal,mouseX,mouseY,cvdIndex);
     cvdIndex = (cvdIndex+1) % 6;
   }
