@@ -18,8 +18,14 @@ function setup() {
 }
 
 function draw() {
-  let x = particles[0].pos.x;
-  let y = particles[0].pos.y;
-  let pix = img.get(x, y);
-  fill(pix, 128);
+
+  for(let i = 0; i < particles.length; i++){
+    let x = particles[i].pos.x;
+    let y = particles[i].pos.y;
+    let pix = img.get(x, y);
+    particles[i].col = pix;
+
+    particles[i].update();
+    particles[i].show();
+  }
 }
