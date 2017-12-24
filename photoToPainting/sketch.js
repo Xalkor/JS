@@ -6,7 +6,7 @@ img = loadImage('kitten-1582384_960_720.jpg');
 }
 
 function setup() {
-    createCanvas(623,720);
+    createCanvas(img.width,img.height);
   for(let i = 0; i < 100; i++){
     let p = new Particle();
     particles.push(p);
