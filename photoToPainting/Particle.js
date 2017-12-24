@@ -24,7 +24,7 @@ class Particle{
   }
 
   show(){
-    stroke(this.col[0],this.col[1],this.col[2],this.col[3]);
+    stroke(this.col[0],this.col[1],this.col[2],127);
     strokeWeight(this.r);
     line(this.pos.x,this.pos.y,this.prevPos.x,this.prevPos.y);
   }
