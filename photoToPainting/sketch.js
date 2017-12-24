@@ -22,5 +22,4 @@ function draw() {
   let y = particles[0].pos.y;
   let pix = img.get(x, y);
   fill(pix, 128);
-  ellipse(x, y, pointillize, pointillize);
 }
