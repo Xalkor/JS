@@ -12,7 +12,7 @@ function setup() {
   flock = new Flock();
 
   for (var i = 0; i < 25; i++) {
-    var b = new Boid(width/2,height/2);
+    var b = new Boid(600",height);
     flock.addBoid(b);
   }
   //colorMode(HSB);
@@ -65,7 +65,7 @@ for (var i = 0; i < points.length; i+=1) {
 
 function draw() {
   background(255);
-  if(frameCount>150){
+  if(frameCount>50){
     flock.run();
   }
   for (var i = 0; i < vehicles.length; i++) {
