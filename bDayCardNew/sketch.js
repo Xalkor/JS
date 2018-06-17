@@ -12,7 +12,7 @@ function setup() {
   flock = new Flock();
 
   for (var i = 0; i < 25; i++) {
-    var b = new Boid(600",height);
+    var b = new Boid(width,height);
     flock.addBoid(b);
   }
   //colorMode(HSB);
