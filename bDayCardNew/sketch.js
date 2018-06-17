@@ -65,7 +65,9 @@ for (var i = 0; i < points.length; i+=1) {
 
 function draw() {
   background(255);
+  if(frameCount>150){
     flock.run();
+  }
   for (var i = 0; i < vehicles.length; i++) {
     var v = vehicles[i];
     v.behaviors(flock.boids);
