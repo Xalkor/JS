@@ -30,6 +30,12 @@ function delCookie (name) {
 function toggleWelcome() {
              if (getCookie(cookieName) == "true") setCookie(cookieName,"false", top.expdate);
              else setCookie(cookieName, "true", top.expdate);
+	     if(getCookie(cookieName) == "true"){
+		  document.getElementsByTagName("P2")[0].innerHTML = "Welcome Message ON"; 
+	     }else{
+		   document.getElementsByTagName("P2")[0].innerHTML = "Welcome Message ON";  
+	     }
+		
 }
 var expdate = new Date();
 expdate.setTime(expdate.getTime() +  (24 * 60 * 60 * 1000 * 365)); 
@@ -38,7 +44,6 @@ if (getCookie(cookieName) == null || getCookie(cookieName) == "true"){
     setCookie(cookieName, "true",expdate);
 		console.log(getCookie(cookieName));
 		displayMessage();
-	document.P3 = "text2";
  }
 			 
 function displayMessage(){
@@ -50,6 +55,6 @@ function displayMessage(){
 <title>ws9e2</title>
   
 <FORM NAME="myform">
-<INPUT TYPE="button" NAME= "Done" VALUE="Done" onClick = "toggleWelcome()">
+<INPUT TYPE="button" NAME= "Done" VALUE="Welcome Message On" onClick = "toggleWelcome()">
 
 </BODY>
