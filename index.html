@@ -8,52 +8,15 @@
     <a href="https://xalkor.github.io/JS/photoToPainting">photoToPainting</a><br />
     <a href="https://xalkor.github.io/JS/bDayCard">cardForDadOld</a><br />
     <a href="https://xalkor.github.io/JS/bDayCardNew">cardForDad</a><br />
-  </head>
+</head>
+	  
+<FORM NAME="myform">
+<INPUT TYPE="text" NAME="user_name" VALUE= "Type name here">
+<INPUT TYPE="button" NAME= "Done" VALUE="Done" onClick = "process(this.form)">
+
 <script>
-    function getCookie(cname) {
-    var name = cname + "=";
-    var decodedCookie = decodeURIComponent(document.cookie);
-    var ca = decodedCookie.split(';');
-    for(var i = 0; i <ca.length; i++) {
-        var c = ca[i];
-        while (c.charAt(0) == ' ') {
-            c = c.substring(1);
-        }
-        if (c.indexOf(name) == 0) {
-            return c.substring(name.length, c.length);
-        }
-    }
-    return null;
-}
-function setCookie(cname, cvalue, time) {
-    var d = new Date();
-    d.setTime(time);
-    var expires = "expires="+ d.toUTCString();
-    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-}
-
-function delCookie (name) {
-     var expireNow = new Date();
-     document.cookie = name + "=" +
-     "; expires=Thu, 01-Jan-70 00:00:01 GMT" +  "; path=/";
-}
-function toggleWelcome() {
-             if (getCookie(cookieName) == "true") setCookie(cookieName,"false", top.expdate);
-             else setCookie(cookieName, "true", top.expdate);
-     }
-var expdate = new Date();
-expdate.setTime(expdate.getTime() +  (24 * 60 * 60 * 1000 * 365)); 
-var cookieName = "testCookie";
-	if (getCookie(cookieName) == null || getCookie(cookieName) == "true"){
-             setCookie(cookieName, "true",expdate);
-			 console.log(getCookie(cookieName));
-			 toggleWelcome();
-			 displayMessage();
-
-             }
-			 
-function displayMessage(){
-	alert("Welcome!");
+function process(var form) {
+	alert("Hello " + form.user_name.value);
 }
 </script>
 
