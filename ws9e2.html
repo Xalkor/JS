@@ -1,5 +1,5 @@
 <HEAD>
-<P2>Welcome Message On</P2>
+<P2>Welcome Message OFF</P2>
 <SCRIPT>
 function getCookie(cname) {
     var name = cname + "=";
@@ -45,7 +45,12 @@ if (getCookie(cookieName) == null || getCookie(cookieName) == "true"){
 		console.log(getCookie(cookieName));
 		displayMessage();
  }
-			 
+		 if(getCookie(cookieName) == "true"){
+		  document.getElementsByTagName("P2")[0].innerHTML = "Welcome Message ON"; 
+	     }else{
+		   document.getElementsByTagName("P2")[0].innerHTML = "Welcome Message OFF";  
+	     }
+	
 function displayMessage(){
 	alert("Welcome!");
 }
