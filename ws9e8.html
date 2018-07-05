@@ -27,6 +27,8 @@ function delCookie (name) {
      "; expires=Thu, 01-Jan-70 00:00:01 GMT" +  "; path=/";
 }
 var cookieName = "cName";
+	
+function  init(){
 	if (getCookie(cookieName) != null){
              alert("Welcome, " + getCookie(cookieName));
         }else{
@@ -51,6 +53,7 @@ var cookieName = "cName";
 		z.setAttribute("onClick", "process(this.form)");
 		document.getElementById("myForm").appendChild(z);
 	}
+}
 
 function process(form){
 	var expdate = new Date();
@@ -60,7 +63,7 @@ function process(form){
 }	
 </SCRIPT>
 </HEAD>
-<BODY>
+<BODY onLoad = "init()">
 <title>ws9e8</title>
 
 </BODY>
