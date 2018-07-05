@@ -29,7 +29,28 @@ function delCookie (name) {
 var cookieName = "cName";
 	if (getCookie(cookieName) != null){
              alert("Welcome, " + getCookie(cookieName));
-        }
+        }else{
+		var w = document.createElement("h1");
+		w.innerHTML = "Enter your name";
+		document.body.appendChild(w);
+		
+		var x = document.createElement("FORM");
+		x.setAttribute("id", "myForm");
+		document.body.appendChild(x);
+
+		var y = document.createElement("INPUT");
+		y.setAttribute("type", "text");
+		y.setAttribute("name", "user_name");	
+		y.setAttribute("value", "");	
+		document.getElementById("myForm").appendChild(y);
+		
+		var z = document.createElement("INPUT");
+		z.setAttribute("type", "button");
+		z.setAttribute("name", "Done");	
+		z.setAttribute("value", "Done");
+		z.setAttribute("onClick", "process(this.form)");
+		document.getElementById("myForm").appendChild(z);
+	}
 
 function process(form){
 	var expdate = new Date();
@@ -43,8 +64,5 @@ function process(form){
 <title>ws9e8</title>
 
 <h1>Enter your name</h1>
-<FORM NAME="myform">
-<INPUT TYPE="text" NAME="user_name" VALUE= "">
-<INPUT TYPE="button" NAME= "Done" VALUE="Done" onClick = "process(this.form)">
 
 </BODY>
