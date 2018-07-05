@@ -50,15 +50,15 @@ function  init(){
 		z.setAttribute("type", "button");
 		z.setAttribute("name", "Done");	
 		z.setAttribute("value", "Done");
-		z.setAttribute("onClick", "process(this.form)");
+		z.setAttribute("onClick", "process()");
 		document.getElementById("myForm").appendChild(z);
 	}
 }
 
-function process(form){
+function process(){
 	var expdate = new Date();
 	expdate.setTime(expdate.getTime() +  (24 * 60 * 60 * 1000 * 365));
-	setCookie(cookieName, form.user_name.value,expdate);
+	setCookie(cookieName, document.myform.user_name.value,expdate);
 	alert("Welcome, " + getCookie(cookieName));
 }	
 </SCRIPT>
