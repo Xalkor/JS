@@ -26,27 +26,21 @@ function delCookie (name) {
      document.cookie = name + "=" +
      "; expires=Thu, 01-Jan-70 00:00:01 GMT" +  "; path=/";
 }
-function toggleWelcome() {
-             if (getCookie(cookieName) == "true") setCookie(cookieName,"false", top.expdate);
-             else setCookie(cookieName, "true", top.expdate);
-     }
-var expdate = new Date();
-expdate.setTime(expdate.getTime() +  (24 * 60 * 60 * 1000 * 365)); 
-var cookieName = "testCookie";
-	if (getCookie(cookieName) == null || getCookie(cookieName) == "true"){
-             setCookie(cookieName, "true",expdate);
-			 console.log(getCookie(cookieName));
-			 toggleWelcome();
-			 displayMessage();
-             }
-			 
-function displayMessage(){
-	alert("Welcome!");
+var cookieName = "cName";
+	if (getCookie(cookieName) != null){
+             alert("Welcome, " + getCookie(cookieName));
+        }
+
+function process(form){
+	var expdate = new Date();
+	expdate.setTime(expdate.getTime() +  (24 * 60 * 60 * 1000 * 365));
+	setCookie(cookieName, form.user_name.value,expdate);
 }
-</SCRIPT>
+	
+</SCRIPT>{
 </HEAD>
 <BODY>
-<title>ws9e1</title>
+<title>ws9e8</title>
 
 <h1>Enter your name</h1>
 <FORM NAME="myform">
