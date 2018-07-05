@@ -1,11 +1,12 @@
 <HEAD>
 <SCRIPT>
 function clicked(){
-   document.write( "link: " + location.href);
+   document.getElementsByTagName("h2")[1].innerHTML = "link: " + location.href;
 }
 </SCRIPT>
 </HEAD>
 <BODY>
 <a href="" onClick="clicked()"><IMG SRC="mike.jpg" ></a>
 <h2>click mike to find this sites link!</h2>
+<h2></h2>
 </BODY>
