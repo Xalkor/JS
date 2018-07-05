@@ -33,7 +33,7 @@ function toggleWelcome() {
 	     if(getCookie(cookieName) == "true"){
 		  document.getElementsByTagName("P2")[0].innerHTML = "Welcome Message ON"; 
 	     }else{
-		   document.getElementsByTagName("P2")[0].innerHTML = "Welcome Message ON";  
+		   document.getElementsByTagName("P2")[0].innerHTML = "Welcome Message OFF";  
 	     }
 		
 }
@@ -55,6 +55,6 @@ function displayMessage(){
 <title>ws9e2</title>
   
 <FORM NAME="myform">
-<INPUT TYPE="button" NAME= "Done" VALUE="Welcome Message On" onClick = "toggleWelcome()">
+<INPUT TYPE="button" NAME= "Done" VALUE="toggle welcome message" onClick = "toggleWelcome()">
 
 </BODY>
