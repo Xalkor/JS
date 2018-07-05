@@ -1,18 +1,14 @@
 <HEAD>
 <SCRIPT>
-function changeImage(image) {
-	console.log(image.src);
-	if(image.src == "https://xalkor.github.io/JS/foxStill.jpg"){
-		image.src="foxGif.gif";
-		console.log("to gif");
-	}else{
-		image.src="foxStill.jpg";
-		console.log("to jpg");
-	}
+function toGif(image) {
+	image.src="foxGif.gif";
+}
+function toJpg(image) {
+	image.src="foxStill.jpg";
 }
 </SCRIPT>
 </HEAD>
 <BODY>
 <title>w11e1</title>
-<img src = "foxStill.jpg" onMouseover = "changeImage(this)"></img>
+<img src = "foxStill.jpg" onMouseover = "toGif(this)" onMouseout = "toJpg(this)"></img>
 </BODY>
