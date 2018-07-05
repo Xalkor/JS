@@ -1,10 +1,13 @@
 <HEAD>
 <SCRIPT>
 function changeImage(image) {
+	console.log("changed");
 	if(image.src == "foxStill.jpg"){
 		image.src="foxGif.gif";
+		console.log("to gif");
 	}else{
 		image.src="foxStill.jpg";
+		console.log("to jpg");
 	}
 }
 </SCRIPT>
