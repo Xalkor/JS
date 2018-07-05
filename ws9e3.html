@@ -1,9 +1,32 @@
 <HEAD>
 <SCRIPT>
-delay(1000);
-alert("test");
+function color1(){
+  document.bgColor="#000000";
+  setTimeout(color2, 500);
+  document.bgColor="#330000";
+}
+  
+function color2(){
+  setTimeout(color3, 500);
+  document.bgColor="#660000";
+}
+
+function color3(){
+  setTimeout(color4, 500);
+  document.bgColor="#990000";
+}
+  
+function color4(){
+  setTimeout(color5, 500);
+  document.bgColor="#bb0000";
+}
+
+function color5(){
+  document.bgColor="#ee0000";
+}
+  
 </SCRIPT>
 </HEAD>
-<BODY>
+<BODY onLoad = "color1()">
 <title>ws9e3</title>
 </BODY>
