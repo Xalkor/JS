@@ -1,0 +1,11 @@
+<HEAD>
+<SCRIPT>
+function changeTitle() {
+	document.getElementById("demo").innerHTML = "History length: " + history.length;
+}
+</SCRIPT>
+</HEAD>
+<BODY onload = "changeTitle()">
+<title>ws9e7</title>
+<h2 id = "data1">
+</BODY>
