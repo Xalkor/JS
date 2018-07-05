@@ -1,11 +1,11 @@
 <HEAD>
 <SCRIPT>
 function clicked(){
-
+   document.getElementsByTagName("h2")[0].innerHTML = "link: " + location.href;
 }
 </SCRIPT>
 </HEAD>
 <BODY onload = "doFade()">
-<a href="" onClick="clicked()"><IMG SRC="mike,jpg" ></a>
+<a href="" onClick="clicked()"><IMG SRC="mike.jpg" ></a>
 <h2>click mike to find this sites link!<h2>
 </BODY>
