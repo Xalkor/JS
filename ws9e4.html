@@ -1,10 +1,27 @@
 <HEAD>
 <SCRIPT>
-function changeTitle() {
-	document.title = "new title";
+function title1() {
+	setTimeout(title2, 100);
+	document.title = "aPril";
+}
+function title2() {
+	setTimeout(title3, 100);
+	document.title = "apRil";
+}
+function title3() {
+	setTimeout(title4, 100);
+	document.title = "aprIl";
+}
+function title4() {
+	setTimeout(title5, 100);
+	document.title = "apriL";
+}
+function title5() {
+	setTimeout(title1, 100);
+	document.title = "April";
 }
 </SCRIPT>
 </HEAD>
-<BODY onload = "changeTitle()">
-<title>HTML Reference</title>
+<BODY onload = "title1()">
+<title>April</title>
 </BODY>
