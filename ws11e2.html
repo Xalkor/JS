@@ -1,14 +1,34 @@
 <HEAD>
 <SCRIPT>
 function color(image,n) {
-	image.src="foxGif.gif";
+	switch(n){
+		case 0:
+			image.src="coloredLines.png";
+			break;
+		case 1:
+			image.src="coloredLines2.png";
+			break;
+		default:
+			image.src="coloredLines3.png";
+	}
 }
 function uncolor(image,n) {
-	image.src="foxStill.jpg";
+	switch(n){
+		case 0:
+			image.src="whiteLines.png";
+			break;
+		case 1:
+			image.src="whiteLines2.png";
+			break;
+		default:
+			image.src="whiteLines3.png";
+	}
 }
 </SCRIPT>
 </HEAD>
 <BODY>
 <title>w11e1</title>
-<img src = "foxStill.jpg" onMouseover = "toGif(this)" onMouseout = "toJpg(this)"></img>
+<img src = "whiteLines.png" onMouseover = "color(this,0)" onMouseout = "uncolor(this,0)"></img><br/>
+<img src = "whiteLines1.png" onMouseover = "color(this,1)" onMouseout = "uncolor(this,1)"></img><br/>
+<img src = "whiteLines2.png" onMouseover = "color(this,2)" onMouseout = "uncolor(this,2)"></img><br/>
 </BODY>
