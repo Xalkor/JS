@@ -58,7 +58,7 @@ function  init(){
 function process(){
 	var expdate = new Date();
 	expdate.setTime(expdate.getTime() +  (24 * 60 * 60 * 1000 * 365));
-	setCookie(cookieName, document.myform.user_name.value,expdate);
+	setCookie(cookieName, document.myForm.user_name.value,expdate);
 	alert("Welcome, " + getCookie(cookieName));
 }	
 </SCRIPT>
