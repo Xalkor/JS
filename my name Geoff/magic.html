@@ -13,7 +13,7 @@
     
     for(let i = 0; i < 5; i++){
       let index = rndIndex();
-      document.getElementById(i+"").src = cards[index];
+      document.getElementById(i+"").src = cards[index].src;
       cards.splice(index,1);
     }
   }
