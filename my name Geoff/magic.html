@@ -6,7 +6,7 @@
     cards = []
     for(let i = 1; i <= 85; i++){
        if(i % 4 == 0){
-         document.getElementById("loadingBar").innerHtml = "loading" + (i-1)/85.0 * 100 + "%";
+         document.getElementById("loadingBar").innerHTML = "loading" + (i-1)/85.0 * 100 + "%";
        }
        x = document.createElement("IMG");
        x.src = i + ".png"
