@@ -1,5 +1,7 @@
 <HEAD>
 <SCRIPT>
+  const w = 234;
+  const h = 336;
   function init(){
     cards = []
     for(let i = 1; i <= 85; i++){
@@ -13,13 +15,13 @@
   
   function embiggen(image){
     console.log("big");
-    image.height = "672";
-    image.width  = "468";
+    image.height = (h*1.5)+"";
+    image.width  = (w*1.5)+"";
   }
   
   function insmallen(image){
-    image.width = "234";
-    image.height = "336";
+    image.width = w + "";
+    image.height = h + "";
   }
 </SCRIPT>
 </HEAD>
