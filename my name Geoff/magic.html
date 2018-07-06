@@ -11,13 +11,23 @@
 //        cards.add[x];
     }
   }
+  
+  embiggen(image){
+    image.width *= 2;
+    image.height *= 2;
+  }
+  
+  insmallen(image){
+    image.width /= 2;
+    image.height /= 2;
+  }
 </SCRIPT>
 </HEAD>
 <BODY onload = "init()">
 <title>eat my ass</title>
-<img src = "1.png" style="display: inline"></img>
-<img src = "1.png" style="display: inline"></img>
-<img src = "1.png" style="display: inline"></img>
-<img src = "1.png" style="display: inline"></img>
-<img src = "1.png" style="display: inline"></img>
+<img src = "1.png" id = "0" style="display: inline" onMouseover = "embiggen(this)" onMouseout = "insmallen(this)"></img>
+<img src = "1.png" id = "1" style="display: inline"></img>
+<img src = "1.png" id = "2" style="display: inline"></img>
+<img src = "1.png" id = "3" style="display: inline"></img>
+<img src = "1.png" id = "4" style="display: inline"></img>
 </BODY>
