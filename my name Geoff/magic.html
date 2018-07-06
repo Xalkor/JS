@@ -10,6 +10,12 @@
        x.src = i + ".png"
        cards.push(x);
     }
+    
+    for(let i = 0; i < 5; i++){
+      let index = rndIndex();
+      document.getElementById(i+"").src = cards[index];
+      cards.splice(index,1);
+    }
   }
   
   function embiggen(image){
@@ -21,6 +27,10 @@
   function insmallen(image){
     image.width = w + "";
     image.height = h + "";
+  }
+  
+  function rndIndex(){
+    return Math.floor(Math.random()*cards.length);
   }
 </SCRIPT>
 </HEAD>
