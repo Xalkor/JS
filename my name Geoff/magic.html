@@ -43,6 +43,7 @@
         image.src = cards[index].src;
         cards.splice(index,1);
       }else{
+         image.src = "";
          document.getElementById("loadingBar").innerHTML = "Deck empty";
       }
   }
