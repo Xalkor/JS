@@ -40,7 +40,7 @@
   function replace(image){
       let index = rndIndex();
       if(index > -1){
-        document.getElementById(i+"").src = cards[index].src;
+        image.src = cards[index].src;
         cards.splice(index,1);
       }else{
          document.getElementById("loadingBar").innerHTML = "Deck empty";
