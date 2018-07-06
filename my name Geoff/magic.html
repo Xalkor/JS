@@ -36,14 +36,24 @@
     if(cards.length == 0){return -1;}
     return Math.floor(Math.random()*cards.length);
   }
+  
+  function replace(image){
+      let index = rndIndex();
+      if(index > -1){
+        document.getElementById(i+"").src = cards[index].src;
+        cards.splice(index,1);
+      }else{
+         document.getElementById("loadingBar").innerHTML = "Deck empty";
+      }
+  }
 </SCRIPT>
 </HEAD>
 <BODY onload = "init()">
 <title>eat my ass</title>
 <h2 id = "loadingBar">loading 0%</h2>
-<img id = "0" style="display: inline" onMouseover = "embiggen(this)" onMouseout = "insmallen(this)" onLoad = "insmallen(this)"></img>
-<img id = "1" style="display: inline" onMouseover = "embiggen(this)" onMouseout = "insmallen(this)" onLoad = "insmallen(this)"></img>
-<img id = "2" style="display: inline" onMouseover = "embiggen(this)" onMouseout = "insmallen(this)" onLoad = "insmallen(this)"></img>
-<img id = "3" style="display: inline" onMouseover = "embiggen(this)" onMouseout = "insmallen(this)" onLoad = "insmallen(this)"></img>
-<img id = "4" style="display: inline" onMouseover = "embiggen(this)" onMouseout = "insmallen(this)" onLoad = "insmallen(this)"></img>
+<img id = "0" style="display: inline" onMouseover = "embiggen(this)" onMouseout = "insmallen(this)" onLoad = "insmallen(this)" onClick = "replace(this)"></img>
+<img id = "1" style="display: inline" onMouseover = "embiggen(this)" onMouseout = "insmallen(this)" onLoad = "insmallen(this)" onClick = "replace(this)"></img>
+<img id = "2" style="display: inline" onMouseover = "embiggen(this)" onMouseout = "insmallen(this)" onLoad = "insmallen(this)" onClick = "replace(this)"></img>
+<img id = "3" style="display: inline" onMouseover = "embiggen(this)" onMouseout = "insmallen(this)" onLoad = "insmallen(this)" onClick = "replace(this)"></img>
+<img id = "4" style="display: inline" onMouseover = "embiggen(this)" onMouseout = "insmallen(this)" onLoad = "insmallen(this)" onClick = "replace(this)"></img>
 </BODY>
