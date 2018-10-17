@@ -1,7 +1,7 @@
 function color(r, g, b) {
-  if (arguments.length == 3) {
+  if (r && g && b) {
     return 'rgb(' + r + ',' + g + ',' + b + ')';
-  } else if (arguments.length == 1) {
+  } else if (r) {
     return 'rgb(' + r + ',' + r + ',' + r + ')';
   } else {
     return 'rgb(255,255,255)';
