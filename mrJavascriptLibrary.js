@@ -58,3 +58,15 @@ function mod(n, m) {
     var remain = n % m;
     return Math.floor(remain >= 0 ? remain : remain + m);
 };
+
+class Vector{
+  constructor(x,y){
+    if(x && y){
+     this.x = x;
+     this.y = y;
+    }else{
+      this.x = 0;
+      this.y = 0;
+    }
+  }
+}
