@@ -53,3 +53,8 @@ function rect(x, y, width, height) {
     ctx.fillRect(x, y, width, height);
   }
 }
+
+function mod(n, m) {
+    var remain = n % m;
+    return Math.floor(remain >= 0 ? remain : remain + m);
+};
