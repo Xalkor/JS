@@ -3,7 +3,7 @@ let isFill = true;
 let width = 200, height = 200;
 let timer;
 let ctx;
-
+//
 //converts 3 ints into a color string
 //or 1 int into a greyscale color string
 function color(r, g, b) {
