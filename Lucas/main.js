@@ -21,7 +21,8 @@ function init() {
 }
 
 function draw(ctx) {
-  background(51);
+  ctx.fillStyle = "rgb(51,51,51)";
+  ctx.fillRect(0,0,width,height);
   for (let i = 0; i < word.length; i++) {
     h += .75;
     ctx.fillStyle = "hsl(" + mod(Math.floor(h), 360) + ",100%,50%)";
@@ -33,5 +34,4 @@ function mouseMoved(event) {
   console.log(event);
   can.style.top = event.clientY - height / 2 + "px";
   can.style.left = event.clientX - width / 2 + "px";
-
 }
