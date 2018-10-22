@@ -7,9 +7,9 @@ let ctx;
 //converts 3 ints into a color string
 //or 1 int into a greyscale color string
 function color(r, g, b) {
-  if (r && g && b) {
+  if (arguments.length === 3) {
     return 'rgb(' + r + ',' + g + ',' + b + ')';
-  } else if (r) {
+  } else if (arguments.length === 1) {
     return 'rgb(' + r + ',' + r + ',' + r + ')';
   } else {
     return 'rgb(255,255,255)';
