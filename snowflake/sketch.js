@@ -10,12 +10,6 @@ let i = 0;
 function setup() {
     a = 4.71238898038469;
     cl = color(18, 180, 255);
-    
-    rs = createSlider(0,255,18,1);
-    gs = createSlider(0,255,180,1);
-    gs.hide()
-    gs.show();
-    bs = createSlider(0,255,255,1);
 
     let c = createCanvas(600, 600);
 
@@ -37,7 +31,13 @@ function setup() {
         saveCanvas(c, month() + "/" + day() + "/" + year() + "snowflake" + i++, 'png');
     });
     but1.hide();
-
+    rs = createSlider(0, 255, 18, 1);
+    rs.hide()
+    rs.show();
+    gs = createSlider(0, 255, 180, 1);
+    gs.hide()
+    gs.show();
+    bs = createSlider(0, 255, 255, 1);
     s = new Piece();
 }
 
