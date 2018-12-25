@@ -29,8 +29,7 @@ function setup() {
 }
 
 function scramble(x) {
-  console.log('test');
-  for (let i = 0; i < x; i++) {
+  for (let i = 0; i < 4*x*x; i++) {
     if (random(1) < 0.5) {
       cycle(floor(random(n)), random(1) < 0.5);
     } else {
