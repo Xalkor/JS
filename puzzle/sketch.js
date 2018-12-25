@@ -16,6 +16,7 @@ function getUrlVars() {
 }
 
 function setup() {
+  n = Number(decodeURI(getUrlVars()['n']));
   createCanvas(min(windowWidth, windowHeight)-25, min(windowWidth, windowHeight)-25);
   colorMode(HSB);
   for (let i = 0; i < n; i++) {
