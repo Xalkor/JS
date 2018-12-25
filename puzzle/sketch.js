@@ -7,6 +7,14 @@ let th, r, pth, pr;
 let total = 0;
 let test;
 
+function getUrlVars() {
+  var vars = {};
+  var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m, key, value) {
+    vars[key] = value;
+  });
+  return vars;
+}
+
 function setup() {
   createCanvas(min(windowWidth, windowHeight)-25, min(windowWidth, windowHeight)-25);
   colorMode(HSB);
