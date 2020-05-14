@@ -3,5 +3,5 @@ function setup() {
 }
 
 function draw() {
-  background(64,64,255);
+  background(255);
 }
