@@ -77,7 +77,7 @@ function loadWordleIndex(event) {
 	let level = document.getElementById("level");
 	let index = +level.value;
 	if(!isNaN(index)) {
-		loadWordle(index-1, `${index}`);
+		loadWordle(index, `${index}`);
 	}
 }
 
@@ -86,7 +86,7 @@ function loadWordleDate(event) {
 	let index = getNumberOfDays(new Date("2021-06-21"), date);
 	console.log(index, date);
 	if(!isNaN(index)) {
-		loadWordle(index, document.getElementById("datePicker").valueAsDate.toISOString().substring(0,10));
+		loadWordle(index+2, document.getElementById("datePicker").valueAsDate.toISOString().substring(0,10));
 	}
 }
 

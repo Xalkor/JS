@@ -1,9 +1,19 @@
-body {
-	margin-left: auto;
-	margin-right: auto;
-	/*font-family: sans-serif;*/
-	font-family: "Comic Sans MS", "Comic Sans", cursive;
-	width: 50%;
+@media (orientation: landscape) {
+    body {
+		margin-left: auto;
+		margin-right: auto;
+		font-family: sans-serif;
+		width: 30%;
+	}
+}
+
+@media (orientation: portrait) {
+    body {
+		margin-left: auto;
+		margin-right: auto;
+		font-family: sans-serif;
+		width: 100%;
+	}
 }
 
 .level {
@@ -12,16 +22,17 @@ body {
 }
 
 table {
-	margin-left: auto;
-	margin-right: auto;
-	/*width: 75%;*/
-	font-size: 24pt;
+	/*margin-left: auto;
+	margin-right: auto;*/
+	padding: 1em;
+	width: 100%;
+	font-size: 36pt;
 }
 
 td {
 	background-color: white;
 	width: 1em;
-	height: 1em;
+	height: 2em;
 	text-align: center;
 	border-color: black;
 	border-width: 3px 3px 3px 3px;
@@ -39,7 +50,7 @@ td {
 
 .row {
 	display: flex;
-	width: 75%;
+	width: 95%;
 	margin: 0 auto 8px;
 	/* https://stackoverflow.com/questions/46167604/ios-html-disable-double-tap-to-zoom */
 	touch-action: manipulation;
@@ -48,10 +59,11 @@ td {
 .key {
 	font-family: inherit;
 	font-weight: bold;
+	font-size: 24pt;
 	border: 0;
 	padding: 0.5em;
 	margin: 0 6px 0 0;
-	height: 2em;
+	height: 5em;
 	border-radius: 4px;
 	cursor: pointer;
 	user-select: none;
@@ -78,13 +90,16 @@ td {
 }
 
 .correct {
-	background-color: lime;
+	background-color: rgb(65, 188, 92);
+	color: white;
 }
 
 .almost {
-	background-color: yellow;
+	background-color: rgb(230, 193, 60);
+	color: white;
 }
 
 .incorrect {
 	background-color: grey;
+	color: white;
 }
