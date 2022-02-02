@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="style.css">
+	
+  </head>
+  <body onkeydown="keyPressed(event);">
+	<p class="level" >Level: <span id="levelIndicator">1</span></p>
+	
+	<table border=3 id="board"></table>
+	<br/>
+	
+	<keyboard>
+	<div id="keyboard">
+		<div class="row">
+			<button id="key-q" class="key" data-key="q">q</button>
+			<button id="key-w" class="key" data-key="w">w</button>
+			<button id="key-e" class="key" data-key="e">e</button>
+			<button id="key-r" class="key" data-key="r">r</button>
+			<button id="key-t" class="key" data-key="t">t</button>
+			<button id="key-y" class="key" data-key="y">y</button>
+			<button id="key-u" class="key" data-key="u">u</button>
+			<button id="key-i" class="key" data-key="i">i</button>
+			<button id="key-o" class="key" data-key="o">o</button>
+			<button id="key-p" class="key" data-key="p">p</button>
+		</div>
+		<div class="row">
+			<div class="spacer half"></div>
+			<button id="key-a" class="key" data-key="a">a</button>
+			<button id="key-s" class="key" data-key="s">s</button>
+			<button id="key-d" class="key" data-key="d">d</button>
+			<button id="key-f" class="key" data-key="f">f</button>
+			<button id="key-g" class="key" data-key="g">g</button>
+			<button id="key-h" class="key" data-key="h">h</button>
+			<button id="key-j" class="key" data-key="j">j</button>
+			<button id="key-k" class="key" data-key="k">k</button>
+			<button id="key-l" class="key" data-key="l">l</button>
+			<div class="spacer half"></div>
+		</div><div class="row">
+			<button id="key-Enter" class="key" data-key="Enter" class="one-and-a-half">enter</button>
+			<button id="key-z" class="key" data-key="z">z</button>
+			<button id="key-x" class="key" data-key="x">x</button>
+			<button id="key-c" class="key" data-key="c">c</button>
+			<button id="key-v" class="key" data-key="v">v</button>
+			<button id="key-b" class="key" data-key="b">b</button>
+			<button id="key-n" class="key" data-key="n">n</button>
+			<button id="key-m" class="key" data-key="m">m</button>
+			<button id="key-Backspace" class="key" data-key="Backspace" class="one-and-a-half">⌫</button>
+		</div>
+	</div>
+	</keyboard>
+	
+	<br/>
+	<p>Choose a word (1 - 2315): </p>
+	<input id="level" type="number"></input>
+	<button onclick="randomizeIndex();">randomize</button>
+	<button onclick="loadWordleIndex(event);">load</button>
+	<br/>
+	<p>Or, choose a date (on or after 06/21/21)</p>
+	<input type="date" id="datePicker" min="2021-06-21"></input>
+	<button onclick="updateDate( 1);">→</button>
+	<button onclick="updateDate(-1);">←</button>
+	<button onclick="loadWordleDate(event);">load</button>
+
+  </body>
+  
+	<script>
+		/* based on https://stackoverflow.com/questions/6982692/how-to-set-input-type-dates-default-value-to-today*/
+		function toDateInputValue(date) {
+			var local = new Date(date);
+			console.log(local);
+			local.setMinutes(date.getMinutes() - date.getTimezoneOffset());
+			return local.toJSON().slice(0,10);
+		}
+		document.getElementById('datePicker').value = toDateInputValue(new Date());
+	</script>
+  
+  <script src="wordle.js"></script>
+</html>

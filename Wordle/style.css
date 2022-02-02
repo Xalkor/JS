@@ -1,0 +1,90 @@
+body {
+	margin-left: auto;
+	margin-right: auto;
+	/*font-family: sans-serif;*/
+	font-family: "Comic Sans MS", "Comic Sans", cursive;
+	width: 50%;
+}
+
+.level {
+	display: table;
+    margin: 0 auto;
+}
+
+table {
+	margin-left: auto;
+	margin-right: auto;
+	/*width: 75%;*/
+	font-size: 24pt;
+}
+
+td {
+	background-color: white;
+	width: 1em;
+	height: 1em;
+	text-align: center;
+	border-color: black;
+	border-width: 3px 3px 3px 3px;
+}
+
+.selected {
+	border-color: blue;
+	border-width: 5px 5px 5px 5px;
+}
+
+#keyboard {
+  margin: 0 8px;
+  user-select: none;
+}
+
+.row {
+	display: flex;
+	width: 75%;
+	margin: 0 auto 8px;
+	/* https://stackoverflow.com/questions/46167604/ios-html-disable-double-tap-to-zoom */
+	touch-action: manipulation;
+}
+
+.key {
+	font-family: inherit;
+	font-weight: bold;
+	border: 0;
+	padding: 0.5em;
+	margin: 0 6px 0 0;
+	height: 2em;
+	border-radius: 4px;
+	cursor: pointer;
+	user-select: none;
+	background-color: lightgrey;
+	color: black;
+	flex: 1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-transform: uppercase;
+}
+
+.half {
+	flex: 0.5;
+}
+
+.one {
+	flex: 1;
+}
+
+.one-and-a-half {
+	flex: 1.5;
+	font-size: 2pt;
+}
+
+.correct {
+	background-color: lime;
+}
+
+.almost {
+	background-color: yellow;
+}
+
+.incorrect {
+	background-color: grey;
+}
