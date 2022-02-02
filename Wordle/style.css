@@ -30,12 +30,43 @@ table {
 }
 
 td {
+	transform: rotateX(180deg);
+	
 	background-color: white;
 	width: 1em;
 	height: 2em;
 	text-align: center;
 	border-color: black;
 	border-width: 3px 3px 3px 3px;
+	
+	-webkit-transition:	background-color	0.5s	cubic-bezier(0.85, 0, 0.15, 1),
+						transform			0.5s	cubic-bezier(0.85, 0, 0.15, 1);
+						
+	-moz-transition: 	background-color	0.5s	cubic-bezier(0.85, 0, 0.15, 1),
+						transform			0.5s	cubic-bezier(0.85, 0, 0.15, 1);
+						
+	-o-transition: 		background-color	0.5s	cubic-bezier(0.85, 0, 0.15, 1),
+						transform			0.5s	cubic-bezier(0.85, 0, 0.15, 1);
+						
+	transition: 		background-color	0.5s	cubic-bezier(0.85, 0, 0.15, 1),
+						transform			0.5s	cubic-bezier(0.85, 0, 0.15, 1);
+}
+
+td span {
+	display: inline-block;
+	transform: rotateX(-180deg);
+	
+	-webkit-transition:	transform			0.5s	cubic-bezier(0.85, 0, 0.15, 1),
+						color				0.5s	cubic-bezier(0.85, 0, 0.15, 1);
+						
+	-moz-transition: 	transform			0.5s	cubic-bezier(0.85, 0, 0.15, 1),
+						color				0.5s	cubic-bezier(0.85, 0, 0.15, 1);
+						
+	-o-transition: 		transform			0.5s	cubic-bezier(0.85, 0, 0.15, 1),
+						color				0.5s	cubic-bezier(0.85, 0, 0.15, 1);
+						
+	transition: 		transform			0.5s	cubic-bezier(0.85, 0, 0.15, 1),	
+						color				0.5s	cubic-bezier(0.85, 0, 0.15, 1);	
 }
 
 .selected {
@@ -74,6 +105,22 @@ td {
 	justify-content: center;
 	align-items: center;
 	text-transform: uppercase;
+	
+	-webkit-transition:	background-color	0.5s	cubic-bezier(0.85, 0, 0.15, 1),
+						transform			0.5s	cubic-bezier(0.85, 0, 0.15, 1),
+						color				0.5s	cubic-bezier(0.85, 0, 0.15, 1);
+						
+	-moz-transition: 	background-color	0.5s	cubic-bezier(0.85, 0, 0.15, 1),
+						transform			0.5s	cubic-bezier(0.85, 0, 0.15, 1),
+						color				0.5s	cubic-bezier(0.85, 0, 0.15, 1);
+						
+	-o-transition: 		background-color	0.5s	cubic-bezier(0.85, 0, 0.15, 1),
+						transform			0.5s	cubic-bezier(0.85, 0, 0.15, 1),
+						color				0.5s	cubic-bezier(0.85, 0, 0.15, 1);
+						
+	transition: 		background-color	0.5s	cubic-bezier(0.85, 0, 0.15, 1),
+						transform			0.5s	cubic-bezier(0.85, 0, 0.15, 1),	
+						color				0.5s	cubic-bezier(0.85, 0, 0.15, 1);	
 }
 
 .half {
@@ -92,14 +139,29 @@ td {
 .incorrect {
 	background-color: grey;
 	color: white;
+	transform: rotateX(0deg);
+}
+
+.incorrect span {
+	transform: rotateX(0deg);
 }
 
 .almost {
 	background-color: rgb(230, 193, 60);
 	color: white;
+	transform: rotateX(0deg);
+}
+
+.almost span {
+	transform: rotateX(0deg);
 }
 
 .correct {
 	background-color: rgb(65, 188, 92);
 	color: white;
+	transform: rotateX(0deg);
+}
+
+.correct span {
+	transform: rotateX(0deg);
 }

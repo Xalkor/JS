@@ -101,7 +101,7 @@ function loadWordle(index, levelName) {
 
 function checkWord(letterArr) {
 	let word = '';
-	for(let i = 0; i < WORD_LEN; i++) word += letterArr[i].innerHTML;
+	for(let i = 0; i < WORD_LEN; i++) word += letterArr[i].span.innerHTML;
 	console.log(word);
 	if(dict.indexOf(word.toLowerCase()) >= 0){
 		for(let i = 0; i < WORD_LEN; i++) {
@@ -115,9 +115,14 @@ function checkWord(letterArr) {
 			} else {
 				newClass = 'almost';
 			}
-			letterArr[i].classList.add(newClass);
-			console.log(`key-${word[i]}`);
-			document.getElementById(`key-${word[i].toLowerCase()}`).classList.add(newClass);
+			setTimeout(
+				() => {
+					letterArr[i].div.classList.add(newClass);
+					console.log(`key-${word[i]}`);
+					document.getElementById(`key-${word[i].toLowerCase()}`).classList.add(newClass);
+				},
+				100*i
+			);
 		}
 		return true;
 	}
@@ -127,40 +132,40 @@ function checkWord(letterArr) {
 function keyPressed(event){
 	console.log(event);
 	if(event.key == 'Backspace') {
-		if(boardArr[selected.row][selected.col].innerHTML == '') {
-			boardArr[selected.row][selected.col].classList.remove('selected');
+		if(boardArr[selected.row][selected.col].span.innerHTML == '') {
+			boardArr[selected.row][selected.col].div.classList.remove('selected');
 			selected.col--;
 			if(selected.col < 0) selected.col = 0;
-			boardArr[selected.row][selected.col].classList.add('selected');
+			boardArr[selected.row][selected.col].div.classList.add('selected');
 		}
-		boardArr[selected.row][selected.col].innerHTML = '';
+		boardArr[selected.row][selected.col].span.innerHTML = '';
 	} else if(event.key.length == 1 && event.key.toUpperCase().charCodeAt(0) <= 90 && event.key.toUpperCase().charCodeAt(0) >= 65) {
-		if(boardArr[selected.row][selected.col].innerHTML != '') {
-			boardArr[selected.row][selected.col].classList.remove('selected');
+		if(boardArr[selected.row][selected.col].span.innerHTML != '') {
+			boardArr[selected.row][selected.col].div.classList.remove('selected');
 			selected.col++;
 			if(selected.col >= WORD_LEN) selected.col = WORD_LEN-1;
-			boardArr[selected.row][selected.col].classList.add('selected');
+			boardArr[selected.row][selected.col].div.classList.add('selected');
 		}
 		
-		boardArr[selected.row][selected.col].innerHTML = event.key.toUpperCase();
+		boardArr[selected.row][selected.col].span.innerHTML = event.key.toUpperCase();
 	} else if(event.key == 'ArrowRight') {
-		boardArr[selected.row][selected.col].classList.remove('selected');
+		boardArr[selected.row][selected.col].div.classList.remove('selected');
 		selected.col++;
 		if(selected.col >= WORD_LEN) selected.col = WORD_LEN-1;
-		boardArr[selected.row][selected.col].classList.add('selected');
+		boardArr[selected.row][selected.col].div.classList.add('selected');
 	} else if(event.key == 'ArrowLeft') {
-		boardArr[selected.row][selected.col].classList.remove('selected');
+		boardArr[selected.row][selected.col].div.classList.remove('selected');
 		selected.col--;
 		if(selected.col < 0) selected.col = 0;
-		boardArr[selected.row][selected.col].classList.add('selected');
+		boardArr[selected.row][selected.col].div.classList.add('selected');
 	} else if(event.key == 'Enter') {
 		if(checkWord(boardArr[currTry])) {
 			console.log('pass');
-			boardArr[selected.row][selected.col].classList.remove('selected');
+			boardArr[selected.row][selected.col].div.classList.remove('selected');
 			selected.row++;
 			selected.col = 0;
 			if(selected.row >= TRYS) selected.col = TRYS-1;
-			boardArr[selected.row][selected.col].classList.add('selected');
+			boardArr[selected.row][selected.col].div.classList.add('selected');
 			currTry++;
 		}
 	}
@@ -182,13 +187,15 @@ function initGrid() {
 		let row = document.createElement('tr');
 		for(let j = 0; j < WORD_LEN; j++) {
 			let data = document.createElement('td');
-			data.innerHTML = '';
+			let span = document.createElement('span');
+			span.className = 'td-char';
+			data.appendChild(span);
 			//data.className = 'incorrect';
 			//data.className = 'correct';
 			//data.className = 'almost';
 			row.appendChild(data);
 			
-			boardArr[i][j] = data;
+			boardArr[i][j] = {div: data, span: span};
 		}
 		board.appendChild(row);
 	}
@@ -219,7 +226,7 @@ function main() {
 	//console.table(boardArr);
 	console.log(chosen);
 	
-	boardArr[selected.row][selected.col].classList.add('selected');
+	boardArr[selected.row][selected.col].div.classList.add('selected');
 }
 //chosen = words[0];
 initGrid();
