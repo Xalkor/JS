@@ -89,8 +89,8 @@ td {
 	font-size: 2pt;
 }
 
-.correct {
-	background-color: rgb(65, 188, 92);
+.incorrect {
+	background-color: grey;
 	color: white;
 }
 
@@ -99,7 +99,7 @@ td {
 	color: white;
 }
 
-.incorrect {
-	background-color: grey;
+.correct {
+	background-color: rgb(65, 188, 92);
 	color: white;
 }
