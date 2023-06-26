@@ -1,0 +1,89 @@
+:root {
+    --color-r: hsl(9, 98%, 65%);
+    --color-g: hsl(131, 98%, 65%);
+    --color-b: hsl(222, 98%, 65%);
+    --color-y: hsl(60, 98%, 65%);
+
+    --color-r-glow: hsl(9, 98%, 50%);
+    --color-g-glow: hsl(131, 98%, 50%);
+    --color-b-glow: hsl(222, 98%, 50%);
+    --color-y-glow: hsl(60, 98%, 50%);
+}
+
+body {
+    /* padding: 0; */
+    /* margin: 0; */
+    background-color: #333333;
+    font-family: "Noto Sans", Arial, sans-serif;
+}
+
+p {
+    width: 30%;
+    position: absolute;
+    left: 50%;
+    bottom: 3%;
+    font-size: 2em;
+    transform: translateX(-50%);
+    color: white;
+    text-align: center;
+}
+
+button {
+    width: 30%;
+    aspect-ratio: 5;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+div {
+    width: calc(min(20vh, 30vw));
+    aspect-ratio: 1;
+
+    transition: transform 150ms;
+    transition: box-shadow 150ms;
+
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+
+    background-color: var(--my-color);
+}
+
+div:hover {
+    transform: translate(-50%, -50%) rotate(45deg) scale(108%);
+}
+
+div:active {
+    box-shadow: 0 0 1.5em 0.75em var(--my-color-glow);
+    transform: translate(-50%, -50%) rotate(45deg) scale(100%);
+}
+
+.r {
+    --my-color: var(--color-r);
+    --my-color-glow: var(--color-r-glow);
+    translate: 0 -85%;
+}
+
+.g {
+    --my-color: var(--color-g);
+    --my-color-glow: var(--color-g-glow);
+    translate: -85% 0;
+}
+
+.y {
+    --my-color: var(--color-y);
+    --my-color-glow: var(--color-y-glow);
+    translate: 0 85%;
+}
+
+.b {
+    --my-color: var(--color-b);
+    --my-color-glow: var(--color-b-glow);
+    translate: 85% 0;
+}
+
+.highlight {
+    box-shadow: 0 0 1.5em 0.75em var(--my-color-glow);
+}
