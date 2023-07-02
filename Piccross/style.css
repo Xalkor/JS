@@ -14,8 +14,9 @@ canvas {
 
 button {
   padding: 0.75em;
+  font-size: 1em;
   position: absolute;
   left: 50%;
-  top: 5%;
+  top: 0%;
   translate: -50% 50%;
 }
