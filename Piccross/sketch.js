@@ -38,6 +38,10 @@ function setup() {
   board = Array.from({ length: n }, () => Array(n).fill(0));
 }
 
+function keyPressed() {
+  xMode = !xMode;
+}
+
 function mouseGuard() {
   let bad = false;
   
