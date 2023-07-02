@@ -76,6 +76,7 @@ function normMouse(pos) {
 }
 
 function mousePressed() {
+  print('mousePressed');
   if(!mouseGuard()) return;
   
   let c = normMouse(mouseX);
@@ -90,6 +91,7 @@ function mousePressed() {
 }
 
 function mouseDragged() {
+  print('mouseDragged');
   if(!mouseGuard()) return;
   
   let c = normMouse(mouseX);
