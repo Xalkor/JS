@@ -14,7 +14,7 @@ let maxExt;
 let selR, selC, selOn, xMode = false;
 
 function setup() {
-  boardKey = getURLParams();
+  boardKey = getURLParams().name;
   print(boardKey);
   
   fillColor = color(6,6,25);
