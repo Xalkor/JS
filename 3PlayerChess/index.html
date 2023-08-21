@@ -9,30 +9,87 @@
 
 <body id="body" onload="main();">      
 
-    <label for="piece theme">Piece theme</label>
-    <select name="piece theme" id="pieceThemePicker" value="brown">
-      <option value="brown">brown</option>
-      <option value="usa">usa</option>
-      <option value="rgb">rgb</option>
-      <option value="gray">gray</option>
-      <option value="black">black</option>
-    </select>
-
-    <label for="board theme">Board theme</label>
-    <select name="board theme" id="boardThemePicker" value="brown">
-      <option value="brown">brown</option>
-      <option value="brown2">brown2</option>
-      <option value="rgb">rgb</option>
-      <option value="gray">gray</option>
-      <option value="black">black</option>
-      <option value="green">green</option>
-    </select>
-
-    <div class="main">
+    <div class="main" id="mainDiv">
         <div class="container" id="boardDiv">
         </div>
     </div>
     
+    <div class="verticle">
+      <label for="piece theme">Piece theme</label>
+      <select name="piece theme" id="pieceThemePicker" value="brown">
+        <option value="brown">brown</option>
+        <option value="usa">usa</option>
+        <option value="rgb">rgb</option>
+        <option value="gray">gray</option>
+        <option value="black">black</option>
+        <option value="custom">custom</option>
+      </select>
+
+      <label for="board theme">Board theme</label>
+      <select name="board theme" id="boardThemePicker" value="brown">
+        <option value="brown">brown</option>
+        <option value="brown2">brown2</option>
+        <option value="rgb">rgb</option>
+        <option value="gray">gray</option>
+        <option value="black">black</option>
+        <option value="green">green</option>
+        <option value="custom">custom</option>
+      </select>
+
+      <label for="board angle">Board angle</label>
+      <select name="board angle" id="boardAnglePicker" value="30">
+        <option value="30">30 (white)</option>
+        <option value="90">90 (black top)</option>
+        <option value="150">150 (gray)</option>
+        <option value="210">210 (white top)</option>
+        <option value="270">270 (black)</option>
+        <option value="330">360 (gray top)</option>
+      </select>
+
+      <label for="rotate pieces">rotate pieces?</label>
+      <input name="rotate pieces" type="checkbox" id="rotatePiecesCheck"></input>
+
+      <label for="label alpha">label alpha</label>
+      <input name="label alpha" type="range" id="labelAlphaSlider" value="50" min="0" max="100"></input>
+
+      <label for="white piece">white piece</label>
+      <input name="white piece" type="color" id="whitePieceColor" value="#FFFFFF" oninput="updateCustom('--custom-p-white', document.getElementById('whitePieceColor').value)"></input>
+
+      <label for="gray piece">gray piece</label>
+      <input name="gray piece" type="color" id="grayPieceColor" value="#7F7F7F" oninput="updateCustom('--custom-p-gray', document.getElementById('grayPieceColor').value)"></input>
+
+      <label for="black piece">black piece</label>
+      <input name="black piece" type="color" id="blackPieceColor" value="#000000" oninput="updateCustom('--custom-p-black', document.getElementById('blackPieceColor').value)"></input>
+
+      <label for="white stroke">white stroke</label>
+      <input name="white stroke" type="color" id="whiteStrokeColor" value="#FFFFFF" oninput="updateCustom('--custom-p-white-stroke', document.getElementById('whiteStrokeColor').value)"></input>
+
+      <label for="gray stroke">gray stroke</label>
+      <input name="gray stroke" type="color" id="grayStrokeColor" value="#7F7F7F" oninput="updateCustom('--custom-p-gray-stroke', document.getElementById('grayStrokeColor').value)"></input>
+
+      <label for="black stroke">black stroke</label>
+      <input name="black stroke" type="color" id="blackStrokeColor" value="#000000" oninput="updateCustom('--custom-p-black-stroke', document.getElementById('blackStrokeColor').value)"></input>
+
+      <label for="background">background</label>
+      <input name="background" type="color" id="backgroundColor" value="#717B98" oninput="updateCustom('--custom-b-background', document.getElementById('backgroundColor').value)"></input>
+
+      <label for="white hex">white hex</label>
+      <input name="white hex" type="color" id="whiteHexColor" value="#FFFFFF" oninput="updateCustom('--custom-b-white', document.getElementById('whiteHexColor').value)"></input>
+
+      <label for="gray hex">gray hex</label>
+      <input name="gray hex" type="color" id="grayHexColor" value="#7F7F7F" oninput="updateCustom('--custom-b-gray', document.getElementById('grayHexColor').value)"></input>
+      
+      <label for="black hex">black hex</label>
+      <input name="black hex" type="color" id="blackHexColor" value="#000000" oninput="updateCustom('--custom-b-black', document.getElementById('blackHexColor').value)"></input>
+
+      <label for="menu color">menu color</label>
+      <input name="menu color" type="color" id="menuColor" value="#FFFFFF" oninput="updateCustom('--custom-label-col', document.getElementById('menuColor').value)"></input>
+
+      <button onclick="copyQuickCode();">generate quick load code for current theme</button>
+
+      <input id="inputQuickCode"></input><button onclick="loadQuickLoad(document.getElementById('inputQuickCode').value);">quick load</button>
+
+   </div>
 
     <script src="piece.js"></script>
     <script src="script.js"></script>

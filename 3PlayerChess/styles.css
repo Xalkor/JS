@@ -93,6 +93,9 @@
 
 body {
 
+    overflow: hidden;
+
+
     padding: 0 0;
     margin: 0 0;
     background: var(--b-background);
@@ -101,9 +104,11 @@ body {
 }
 
 
-.main {  
+.main {
     --main-rot: 30deg;
     transform: rotate(var(--main-rot));
+
+    transition: transform 0.6s ease-in-out;
 
     position: absolute;
 
@@ -116,8 +121,42 @@ body {
 
     --m: 0.1vh;   /* margin */
     --f: calc(var(--s) * 1.732 + 4 * var(--m) - 1px); 
+
+    --alpha: 0.5;
 }
   
+html {
+    --custom-p-white:       #FFFFFF;
+    --custom-p-gray:        #7F7F7F;
+    --custom-p-black:       #000000;
+    --custom-p-white-stroke:#000000;
+    --custom-p-gray-stroke: #000000;
+    --custom-p-black-stroke:#FFFFFF;
+
+    --custom-b-background:  #717B98;
+    --custom-b-white:       #FFFFFF;
+    --custom-b-gray:        #7F7F7F;
+    --custom-b-black:       #000000;
+    --custom-label-col:     #FFFFFF;
+}
+
+.piece-theme-custom {
+    --p-white: var(--custom-p-white);
+    --p-gray : var(--custom-p-gray);
+    --p-black: var(--custom-p-black);
+    --p-white-stroke: var(--custom-p-white-stroke);
+    --p-gray-stroke:  var(--custom-p-gray-stroke);
+    --p-black-stroke: var(--custom-p-black-stroke);
+}
+
+.board-theme-custom {
+    --b-background: var(--custom-b-background);
+    --b-white:      var(--custom-b-white);
+    --b-gray:       var(--custom-b-gray);
+    --b-black:      var(--custom-b-black);
+    --label-col:    var(--custom-label-col);
+}
+
 .container {
     font-size: 0; /* disable white space between inline block element */
 
@@ -191,6 +230,12 @@ svg {
         align-items: center;
 
     transform-origin: center;
+    transform: rotate(calc(-1 * var(--main-rot)));
+
+    transition: transform 0.2s ease-in-out;
+}
+
+.rotate-pieces {
     transform: rotate(var(--a));
 }
 
@@ -210,7 +255,7 @@ svg {
 
 .label {
     font-weight: bold;
-    opacity: 0.5;
+    opacity: var(--alpha);
 
     --tw: 1em;
 
@@ -232,6 +277,8 @@ svg {
                translateX(calc(var(--s) * 0.4))
                rotate(calc(-1*var(--a) - var(--main-rot)));
 
+    transition: transform 0.6s ease-in-out;
+
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -241,15 +288,25 @@ svg {
 
 label {
     color: var(--label-col);
+    font-family: 'consolas';
 }
 
-select {
+select, input, button {
     color: var(--b-background);
     background: var(--label-col);
+    font-family: 'consolas';
 }
 
 span {
     font-family: 'consolas';
+}
+
+.verticle {
+    width: 10vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    padding: 0.5em;
 }
 
 .black-board {

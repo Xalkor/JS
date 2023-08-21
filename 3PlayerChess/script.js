@@ -168,6 +168,11 @@ function refreshBoard() {
 function main() {
     let pieceThemePicker = document.getElementById('pieceThemePicker');
     let boardThemePicker = document.getElementById('boardThemePicker');
+    let boardAnglePicker = document.getElementById('boardAnglePicker');
+
+    let mainDiv = document.getElementById('mainDiv');
+    let rotatePiecesCheck = document.getElementById('rotatePiecesCheck');
+    let labelAlphaSlider = document.getElementById('labelAlphaSlider');
 
     pieceThemePicker.onchange = event => {
         console.log(pieceThemePicker.value);
@@ -183,6 +188,26 @@ function main() {
         html.classList.add(`board-theme-${boardThemePicker.value}`);
         refreshBoard();
     };
+    boardAnglePicker.onchange = event => {
+        console.log(boardAnglePicker.value);
+        mainDiv.style.setProperty('--main-rot', `${+boardAnglePicker.value}deg`);
+    };
+    rotatePiecesCheck.onchange = event => {
+        console.log(rotatePiecesCheck.checked);
+        for(let peice of allPieces) {
+            if(peice.svg) {
+                if(rotatePiecesCheck.checked) {
+                    peice.svg.classList.add('rotate-pieces');
+                } else {
+                    peice.svg.classList.remove('rotate-pieces');
+                }
+            }
+        }
+    };
+    labelAlphaSlider.oninput = event => {
+        mainDiv.style.setProperty('--alpha', `${(+labelAlphaSlider.value) / 100}`);
+    };
+
 
     boardMap = {};
     let lens = [6,7,8,9,10,11,10,9,8,7,6];
@@ -210,3 +235,39 @@ function main() {
     }
 
 }
+
+function updateCustom(prop, val) {
+    html.style.setProperty(prop, val);
+    refreshBoard();
+}
+
+let customs = "whitePieceColor,grayPieceColor,blackPieceColor,whiteStrokeColor,grayStrokeColor,blackStrokeColor,backgroundColor,whiteHexColor,grayHexColor,blackHexColor,menuColor".split(',');
+
+function copyQuickCode() {
+    let out = "";
+    for(let custom of customs) {
+        out += document.getElementById(custom).value.substring(1);
+    }
+    window.prompt("Save this code to be able to quickly load this theme in the future", out);
+}
+
+function loadQuickLoad(code) {
+    if(code.length / 6 != customs.length) {
+        return;
+    }
+
+    for(let i = 0; i < customs.length; i ++) {
+        document.getElementById(customs[i]).value = '#' + code.substring(i*6, i*6+6);
+        document.getElementById(customs[i]).oninput();
+        // console.log(code.substring(i*6, i*6+6));
+    }
+
+    pieceThemePicker.value = 'custom';
+    pieceThemePicker.onchange();
+    boardThemePicker.value = 'custom';
+    boardThemePicker.onchange();
+
+    document.getElementById('inputQuickCode').value = '';
+}
+
+//terrible theme: ff0000ffdd00ff8aa73f993861146cff8c2e3660dd00ff08ffffff757575ff05c9
