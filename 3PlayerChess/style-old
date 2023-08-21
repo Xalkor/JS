@@ -14,12 +14,7 @@
         </div>
     </div>
     
-    
-
-    <div class="verticle verticle-closed" id="settingsDiv">
-
-      <div class="gear" onclick="openSettings();">🛠</div>
-
+    <div class="verticle">
       <label for="piece theme">Piece theme</label>
       <select name="piece theme" id="pieceThemePicker" value="brown">
         <option value="brown">brown</option>
@@ -34,7 +29,6 @@
       <select name="board theme" id="boardThemePicker" value="brown">
         <option value="brown">brown</option>
         <option value="brown2">brown2</option>
-        <option value="usa">usa</option>
         <option value="rgb">rgb</option>
         <option value="gray">gray</option>
         <option value="black">black</option>
@@ -45,11 +39,11 @@
       <label for="board angle">Board angle</label>
       <select name="board angle" id="boardAnglePicker" value="30">
         <option value="30">30 (white)</option>
-        <option value="90">90 (gray top)</option>
-        <option value="150">150 (black)</option>
+        <option value="90">90 (black top)</option>
+        <option value="150">150 (gray)</option>
         <option value="210">210 (white top)</option>
-        <option value="270">270 (gray)</option>
-        <option value="330">360 (black top)</option>
+        <option value="270">270 (black)</option>
+        <option value="330">360 (gray top)</option>
       </select>
 
       <label for="rotate pieces">rotate pieces?</label>

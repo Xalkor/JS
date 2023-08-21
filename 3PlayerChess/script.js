@@ -86,67 +86,68 @@ let setup = [
     { index: '199', pieceHTML:bishopHTML, color:0 },
     { index: '288', pieceHTML:bishopHTML, color:0 },
 
-    { index: '3X7', pieceHTML:pawnHTML, color:0 },
-    { index: '397', pieceHTML:pawnHTML, color:0 },
-    { index: '387', pieceHTML:pawnHTML, color:0 },
-    { index: '377', pieceHTML:pawnHTML, color:0 },
-    { index: '378', pieceHTML:pawnHTML, color:0 },
-    { index: '379', pieceHTML:pawnHTML, color:0 },
-    { index: '37X', pieceHTML:pawnHTML, color:0 },
+    { index: '3X7', pieceHTML:pawnHTML,   color:0 },
+    { index: '397', pieceHTML:pawnHTML,   color:0 },
+    { index: '387', pieceHTML:pawnHTML,   color:0 },
+    { index: '377', pieceHTML:pawnHTML,   color:0 },
+    { index: '378', pieceHTML:pawnHTML,   color:0 },
+    { index: '379', pieceHTML:pawnHTML,   color:0 },
+    { index: '37X', pieceHTML:pawnHTML,   color:0 },
 
-    { index: '28X', pieceHTML:rookHTML, color:0 },
-    { index: '2X8', pieceHTML:rookHTML, color:0 },
+    { index: '28X', pieceHTML:rookHTML,   color:0 },
+    { index: '2X8', pieceHTML:rookHTML,   color:0 },
 
     { index: '289', pieceHTML:knightHTML, color:0 },
     { index: '298', pieceHTML:knightHTML, color:0 },
 
-    { index: '1X9', pieceHTML:queenHTML, color:0 },
-    { index: '19X', pieceHTML:kingHTML, color:0 },
+    { index: '1X9', pieceHTML:queenHTML,  color:0 },
+    { index: '19X', pieceHTML:kingHTML,   color:0 },
 
 
 
-    { index: 'X0X', pieceHTML:bishopHTML, color:1 },
-    { index: '919', pieceHTML:bishopHTML, color:1 },
-    { index: '828', pieceHTML:bishopHTML, color:1 },
+    { index: 'XX0', pieceHTML:bishopHTML, color:1 },
+    { index: '991', pieceHTML:bishopHTML, color:1 },
+    { index: '882', pieceHTML:bishopHTML, color:1 },
 
-    { index: 'X37', pieceHTML:pawnHTML, color:1 },
-    { index: '937', pieceHTML:pawnHTML, color:1 },
-    { index: '837', pieceHTML:pawnHTML, color:1 },
-    { index: '737', pieceHTML:pawnHTML, color:1 },
-    { index: '738', pieceHTML:pawnHTML, color:1 },
-    { index: '739', pieceHTML:pawnHTML, color:1 },
-    { index: '73X', pieceHTML:pawnHTML, color:1 },
+    { index: 'X73', pieceHTML:pawnHTML,   color:1 },
+    { index: '973', pieceHTML:pawnHTML,   color:1 },
+    { index: '873', pieceHTML:pawnHTML,   color:1 },
+    { index: '773', pieceHTML:pawnHTML,   color:1 },
+    { index: '783', pieceHTML:pawnHTML,   color:1 },
+    { index: '793', pieceHTML:pawnHTML,   color:1 },
+    { index: '7X3', pieceHTML:pawnHTML,   color:1 },
 
-    { index: '82X', pieceHTML:rookHTML, color:1 },
-    { index: 'X28', pieceHTML:rookHTML, color:1 },
+    { index: '8X2', pieceHTML:rookHTML,   color:1 },
+    { index: 'X82', pieceHTML:rookHTML,   color:1 },
 
-    { index: '829', pieceHTML:knightHTML, color:1 },
-    { index: '928', pieceHTML:knightHTML, color:1 },
+    { index: '892', pieceHTML:knightHTML, color:1 },
+    { index: '982', pieceHTML:knightHTML, color:1 },
 
-    { index: '91X', pieceHTML:queenHTML, color:1 },
-    { index: 'X19', pieceHTML:kingHTML, color:1 },
+    { index: 'X91', pieceHTML:queenHTML,  color:1 },
+    { index: '9X1', pieceHTML:kingHTML,   color:1 },
 
 
-    { index: 'XX0', pieceHTML:bishopHTML, color:2 },
-    { index: '991', pieceHTML:bishopHTML, color:2 },
-    { index: '882', pieceHTML:bishopHTML, color:2 },
 
-    { index: 'X73', pieceHTML:pawnHTML, color:2 },
-    { index: '973', pieceHTML:pawnHTML, color:2 },
-    { index: '873', pieceHTML:pawnHTML, color:2 },
-    { index: '773', pieceHTML:pawnHTML, color:2 },
-    { index: '783', pieceHTML:pawnHTML, color:2 },
-    { index: '793', pieceHTML:pawnHTML, color:2 },
-    { index: '7X3', pieceHTML:pawnHTML, color:2 },
+    { index: 'X0X', pieceHTML:bishopHTML, color:2 },
+    { index: '919', pieceHTML:bishopHTML, color:2 },
+    { index: '828', pieceHTML:bishopHTML, color:2 },
 
-    { index: '8X2', pieceHTML:rookHTML, color:2 },
-    { index: 'X82', pieceHTML:rookHTML, color:2 },
+    { index: 'X37', pieceHTML:pawnHTML,   color:2 },
+    { index: '937', pieceHTML:pawnHTML,   color:2 },
+    { index: '837', pieceHTML:pawnHTML,   color:2 },
+    { index: '737', pieceHTML:pawnHTML,   color:2 },
+    { index: '738', pieceHTML:pawnHTML,   color:2 },
+    { index: '739', pieceHTML:pawnHTML,   color:2 },
+    { index: '73X', pieceHTML:pawnHTML,   color:2 },
 
-    { index: '892', pieceHTML:knightHTML, color:2 },
-    { index: '982', pieceHTML:knightHTML, color:2 },
+    { index: '82X', pieceHTML:rookHTML,   color:2 },
+    { index: 'X28', pieceHTML:rookHTML,   color:2 },
 
-    { index: 'X91', pieceHTML:queenHTML, color:2 },
-    { index: '9X1', pieceHTML:kingHTML, color:2 },
+    { index: '829', pieceHTML:knightHTML, color:2 },
+    { index: '928', pieceHTML:knightHTML, color:2 },
+
+    { index: '91X', pieceHTML:queenHTML,  color:2 },
+    { index: 'X19', pieceHTML:kingHTML,   color:2 },
 
 ];
 
@@ -271,3 +272,13 @@ function loadQuickLoad(code) {
 }
 
 //terrible theme: ff0000ffdd00ff8aa73f993861146cff8c2e3660dd00ff08ffffff757575ff05c9
+
+let open = false;
+function openSettings() {
+    if(open) {
+        document.getElementById('settingsDiv').classList.add('verticle-closed');
+    } else {
+        document.getElementById('settingsDiv').classList.remove('verticle-closed');
+    }
+    open = !open;
+}
