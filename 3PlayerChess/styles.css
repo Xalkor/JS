@@ -1,0 +1,295 @@
+.piece-theme-brown {
+    --p-white: rgb(255, 242, 231);
+    --p-gray : rgb(240, 100, 0);
+    --p-black: rgb(77, 52, 38);
+    --p-white-stroke: #000;
+    --p-gray-stroke: #000;
+    --p-black-stroke: #FFF;
+}
+
+.piece-theme-usa {
+    --p-white: rgb(247, 255, 242);
+    --p-gray : rgb(163, 0, 0);
+    --p-black: rgb(56, 32, 141);
+    --p-white-stroke: #000;
+    --p-gray-stroke:  #000;
+    --p-black-stroke: #000;
+}
+
+.piece-theme-rgb {
+    --p-white: rgb(255, 0, 0);
+    --p-gray : rgb(0, 200, 0);
+    --p-black: rgb(64, 64, 255);
+    --p-white-stroke:#000;
+    --p-gray-stroke: #000;
+    --p-black-stroke:#000;
+}
+
+.piece-theme-gray {
+    --p-white: #F9F9F9;
+    --p-gray : #a8a8a8;
+    --p-black: #565352;
+    --p-white-stroke: #000;
+    --p-gray-stroke: #000;
+    --p-black-stroke: #000;
+}
+
+.piece-theme-black {
+    --p-white: rgb(255, 255, 255);
+    --p-gray : rgb(128, 115, 115);
+    --p-black: rgb(0, 0, 0);
+    --p-white-stroke: var(--p-black);
+    --p-gray-stroke: var(--p-black);
+    --p-black-stroke: var(--p-white);
+}
+
+.board-theme-rgb {
+    --b-background: rgb(0,0,0);
+    --b-white: hsl(350 35% 78% / 1);
+    --b-gray: hsl(83 60% 78% / 1);
+    --b-black: hsl(216 17% 79% / 1);
+    --label-col: var(--b-white);
+}
+
+.board-theme-green {
+    --b-background: rgb(0,0,0);
+    --b-white: #EBEBD0;
+    --b-gray : #B9CC36;
+    --b-black: #779455;
+    --label-col: var(--b-white);
+}
+
+.board-theme-brown2 {
+    --b-background: rgb(0,0,0);
+    --b-white: hsl(61, 56%, 83%);
+    --b-gray : hsl(41, 60%, 51%);
+    --b-black: hsl(30, 27%, 46%);
+    --label-col: var(--b-white);
+}
+
+.board-theme-brown {
+    --b-background: rgb(17 15 35);
+    --b-white: hsl(26 61% 73% / 1);
+    --b-gray: hsl(25 43% 54% / 1);
+    --b-black: hsl(22 28% 35% / 1);
+    --label-col: var(--b-white);
+}
+
+.board-theme-gray {
+    --b-background: rgb(219, 228, 244);
+    --b-white: rgb(179, 179, 179);
+    --b-gray : rgb(127, 127, 127);
+    --b-black: rgb(95, 95, 95);
+    --label-col: var(--b-black);
+}
+
+.board-theme-black {
+    --b-background: rgb(168, 189, 225);
+    --b-white: rgb(255, 255, 255);
+    --b-gray : rgb(127, 127, 127);
+    --b-black: rgb(0, 0, 0);
+    --label-col: var(--b-black);
+}
+
+body {
+
+    padding: 0 0;
+    margin: 0 0;
+    background: var(--b-background);
+
+    /* position: relative; */
+}
+
+
+.main {  
+    --main-rot: 30deg;
+    transform: rotate(var(--main-rot));
+
+    position: absolute;
+
+    left: 50vw;
+    top: 50vh;
+    translate: -50% -50%;
+
+    display: flex;
+    --s: min(8.33vh, 8.33vw);  /* size  */
+
+    --m: 0.1vh;   /* margin */
+    --f: calc(var(--s) * 1.732 + 4 * var(--m) - 1px); 
+}
+  
+.container {
+    font-size: 0; /* disable white space between inline block element */
+
+    position: relative;
+
+    --width: calc(12 * var(--s));
+    width: var(--width);
+    height: calc(var(--width) * 0.86602);
+
+}
+
+.container div {
+    position: relative;
+
+    user-select: none;
+
+    width: var(--s);
+    margin: var(--m);
+    height: calc(var(--s) * 1.1547);
+    /* display: inline-block; */
+    font-size: initial; /* we reset the font-size if we want to add some content */
+
+    clip-path: polygon(0% 25%, 0% 75%, 50% 100%, 100% 75%, 100% 25%, 50% 0%);
+       /* clip-path: polygon(45% 1.33975%, 46.5798% 0.60307%, 48.26352% 0.15192%, 50% 0%, 51.73648% 0.15192%, 53.4202% 0.60307%, 55% 1.33975%, 89.64102% 21.33975%, 91.06889% 22.33956%, 92.30146% 23.57212%, 93.30127% 25%, 94.03794% 26.5798%, 94.48909% 28.26352%, 94.64102% 30%, 94.64102% 70%, 94.48909% 71.73648%, 94.03794% 73.4202%, 93.30127% 75%, 92.30146% 76.42788%, 91.06889% 77.66044%, 89.64102% 78.66025%, 55% 98.66025%, 53.4202% 99.39693%, 51.73648% 99.84808%, 50% 100%, 48.26352% 99.84808%, 46.5798% 99.39693%, 45% 98.66025%, 10.35898% 78.66025%, 8.93111% 77.66044%, 7.69854% 76.42788%, 6.69873% 75%, 5.96206% 73.4202%, 5.51091% 71.73648%, 5.35898% 70%, 5.35898% 30%, 5.51091% 28.26352%, 5.96206% 26.5798%, 6.69873% 25%, 7.69854% 23.57212%, 8.93111% 22.33956%, 10.35898% 21.33975%); */
+    
+       margin-bottom: calc(var(--m) - var(--s) * 0.2886); /* some negative margin to create overlap */
+
+    display: inline-block; 
+    /* flex-direction: column;
+    justify-content: center; */
+    text-align: center;
+    /* vertical-align: middle; */
+}
+
+svg {
+    filter: drop-shadow(-2px -4px 3px rgb(0 0 0 / .8))
+}
+
+.piece {
+    /* color: var(--b-background); */
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    --tw: 2.8em;
+
+    /* border-radius: 50%; */
+
+    width: var(--tw);
+    height: var(--tw);
+    font-size: var(--tw);
+    translate: calc(var(--tw) * -0.5) calc(var(--tw) * -0.5);
+
+    --sw: 0.05em;        
+
+    /* text-shadow:
+        calc(-1*var(--sw)) calc(-1*var(--sw)) 0 var(--sc),  
+        var(--sw) calc(-1*var(--sw)) 0 var(--sc),
+        calc(-1*var(--sw)) var(--sw) 0 var(--sc),
+        var(--sw) var(--sw) 0 var(--sc),
+        calc(-1*var(--sw)) 0 0 var(--sc),  
+        0 calc(-1*var(--sw)) 0 var(--sc),
+        var(--sw) 0 0 var(--sc),
+        0 var(--sw) 0 var(--sc); */
+
+        box-shadow: calc(-1*var(--sw)) calc(-1*var(--sw)) 0 var(--sc);
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    transform-origin: center;
+    transform: rotate(var(--a));
+}
+
+.container::before {
+    content: "";
+    width: calc(var(--s) / 2 + var(--m));
+    float: left;
+    height: 120%; 
+    shape-outside: repeating-linear-gradient(#0000 0 calc(var(--f) - 3px), #000 0 var(--f));
+}
+
+.container div div {
+    position: relative;
+
+    
+}
+
+.label {
+    font-weight: bold;
+    opacity: 0.5;
+
+    --tw: 1em;
+
+    width: var(--tw);
+    height: var(--tw);
+    border-radius: 50%;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: calc(var(--tw) * -0.5) calc(var(--tw) * -0.5);
+    /* transform-origin: center; */
+
+    /* rotate: var(--a); */
+
+    font-size: 1em;
+
+    transform: rotate(var(--a))
+               translateX(calc(var(--s) * 0.4))
+               rotate(calc(-1*var(--a) - var(--main-rot)));
+
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+
+}
+
+label {
+    color: var(--label-col);
+}
+
+select {
+    color: var(--b-background);
+    background: var(--label-col);
+}
+
+span {
+    font-family: 'consolas';
+}
+
+.black-board {
+    background-color: var(--b-black);
+}
+.white-board {
+    background-color: var(--b-white);
+}
+.gray-board {
+    background-color: var(--b-gray);
+}
+
+.black-label {
+    color: var(--p-black-stroke);
+    background: var(--p-black);
+}
+.white-label {
+    color: var(--p-white-stroke);
+    background: var(--p-white);
+}
+.gray-label {
+    color: var(--p-gray-stroke);
+    background: var(--p-gray);
+}
+
+.black-piece {
+    color: var(--p-black);
+    /* background: var(--p-black); */
+    --sc: var(--p-black-stroke);
+    --a: 90deg;
+}
+.white-piece {
+    color: var(--p-white);
+    /* background: var(--p-white); */
+    --sc: var(--p-white-stroke);
+    --a: 330deg;
+}
+.gray-piece {
+    color: var(--p-gray);
+    /* background: var(--p-gray); */
+    --sc: var(--p-gray-stroke);
+    --a: 210deg;
+}

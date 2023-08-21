@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html class="board-theme-brown piece-theme-brown">
+
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.cdnfonts.com/css/fixedsys-excelsior-301" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body id="body" onload="main();">      
+
+    <label for="piece theme">Piece theme</label>
+    <select name="piece theme" id="pieceThemePicker" value="brown">
+      <option value="brown">brown</option>
+      <option value="usa">usa</option>
+      <option value="rgb">rgb</option>
+      <option value="gray">gray</option>
+      <option value="black">black</option>
+    </select>
+
+    <label for="board theme">Board theme</label>
+    <select name="board theme" id="boardThemePicker" value="brown">
+      <option value="brown">brown</option>
+      <option value="brown2">brown2</option>
+      <option value="rgb">rgb</option>
+      <option value="gray">gray</option>
+      <option value="black">black</option>
+      <option value="green">green</option>
+    </select>
+
+    <div class="main">
+        <div class="container" id="boardDiv">
+        </div>
+    </div>
+    
+
+    <script src="piece.js"></script>
+    <script src="script.js"></script>
+
+
+</body>
+
+</html>
