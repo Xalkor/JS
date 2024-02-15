@@ -32,7 +32,7 @@ finalQuestion.extraNo  = () => timerN(10)
 let question5 = {
     q: 'Will you be my valentine?',
     yText: 'Yes!',
-    nText: 'Of Course!!',
+    nText: 'Yes!',
     y: finalQuestion,
     n: finalQuestion
 }
