@@ -91,6 +91,11 @@ const staticInfo = [
         title: titleCaps('time since we first played Catan'),
         type: 'countup',
         time: new Date('2022-08-10T22:00:00.000-04:00')
+    },
+    {
+        title: titleCaps('time since we first played DnD'),
+        type: 'countup',
+        time: new Date('2022-06-17T12:00:00.000-04:00')
     }
 
 ];
