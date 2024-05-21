@@ -83,7 +83,7 @@ const staticInfo = [
         time: new Date('2022-05-20T09:00:00.000-04:00')
     },
     {
-        title: titleCaps('time since we first played Azule'),
+        title: titleCaps('time since we first played Azul'),
         type: 'countup',
         time: new Date('2022-06-10T14:00:00.000-04:00')
     },
