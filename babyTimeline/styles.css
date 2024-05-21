@@ -1,0 +1,112 @@
+/* styles.css */
+
+@font-face {
+    font-family: "handwriting";
+    src: url("Hand-Regular.ttf");
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "handwriting";
+    background-color: #D4E9F8;
+    color: #220022;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+h1 {
+    text-align: center;
+    height: 10vh;
+    margin: 0;
+    line-height: 11vh;
+}
+
+input {
+  font-family: "handwriting";
+}
+
+.dummy-list {
+    height: 85vh;
+    overflow-y: auto;
+    border: 1px solid #316F9A;
+    padding: 10px;
+    background-color: #A1CAE7;
+}
+
+/* .scrollable-list {
+    height: 85vh;
+    overflow-y: auto;
+    border: 1px solid #316F9A;
+    padding: 10px;
+    background-color: #A1CAE7;
+} */
+
+.item {
+  position: relative;
+    padding: 10px;
+    margin: 5px 0;
+    background-color: #EDD4F8;
+    border: 1px solid #D3A1E8;
+    border-radius: 5px;
+}
+
+.trash-icon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 2rem;
+    height: 2rem;
+    cursor: pointer;
+    opacity: 0;
+  transition: opacity 0.05s; /* Smooth transition */
+  border-radius: 4px;
+  padding: 0.2rem;
+  background:rgb(220,185,229);
+}
+
+.trash-icon:hover {
+  background:rgb(179,155,184);
+}
+
+.removable:hover .trash-icon {
+    opacity: 1; /* Show on hover */
+}
+
+.center {
+  text-align: center;
+}
+
+.plus-icon {
+    position: absolute;
+     right: 10px;
+    top: 50%;
+    transform: translateY(-50%); 
+    width: 2rem;
+    height: 2rem;
+    cursor: pointer;
+  border-radius: 4px;
+  padding: 0.2rem;
+  background:rgb(220,185,229);
+}
+
+.plus-icon:hover {
+  background:rgb(179,155,184);
+}
+
+/* Responsive styles */
+@media (max-width: 600px) {
+    .container {
+        padding: 10px;
+    }
+
+    /* .scrollable-list {
+        height: 200px;
+    } */
+}
