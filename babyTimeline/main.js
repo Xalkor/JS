@@ -41,7 +41,6 @@
 })();
 
 const staticInfo = [
-
     {
         title: titleCaps('time since we started talking on hinge'),
         type: 'countup',
@@ -83,7 +82,7 @@ const staticInfo = [
         time: new Date('2022-05-20T09:00:00.000-04:00')
     },
     {
-        title: titleCaps('time since we first played Azul'),
+        title: titleCaps('time since we first played Azule'),
         type: 'countup',
         time: new Date('2022-06-10T14:00:00.000-04:00')
     },
@@ -93,11 +92,29 @@ const staticInfo = [
         time: new Date('2022-08-10T22:00:00.000-04:00')
     },
     {
-        title: titleCaps('time since we first played DnD'),
-        type: 'countup',
-        time: new Date('2022-06-17T12:00:00.000-04:00')
+      title: titleCaps('time until Emily\'s Birthday'),
+      type: 'countdown',
+      time: new Date('2022-01-04T24:00:00.000-04:00'),
+      theme: 'birthday'
+    },
+    {
+      title: titleCaps('time until Eli\'s Birthday'),
+      type: 'countdown',
+      time: new Date('2022-09-26T01:10:00.000-04:00'),
+      theme: 'birthday'
+    },
+    {
+        title: titleCaps('time until Christmas'),
+        type: 'countdown',
+        time: new Date('2023-10-31T00:00:00.000-04:00'),
+        theme: 'christmas'
+    },
+    {
+        title: titleCaps('time until Halloween'),
+        type: 'countdown',
+        time: new Date('2023-10-31T00:00:00.000-04:00'),
+        theme: 'halloween'
     }
-
 ];
 
 function getYearMonthDayDifference(startDate, endDate) {
@@ -199,6 +216,30 @@ let intervalID = null;
 
 function setup() {
     
+    let today = new Date();
+    let year = today.getFullYear();
+    let month = today.getMonth();
+    let day = today.getDate();
+    
+    function setData(data, currDate, currMonth, date, month) {
+      data.time.setFullYear(year);
+      data.time.setDate(date)
+      data.time.setMonth(month)
+      if(currMonth > month || (currMonth == month && currDate == date)) data.time.setFullYear(year+1);
+    }
+
+    let halloweenData = staticInfo.at(-1);
+    setData(halloweenData, day, month, 31, 9)
+
+    let christmasData = staticInfo.at(-2);
+    setData(christmasData, day, month, 25, 11)
+
+    let eBirthData = staticInfo.at(-3);
+    setData(eBirthData, day, month, 26, 8)
+
+    let emBirthData = staticInfo.at(-4);
+    setData(emBirthData, day, month, 4, 0)
+
     //storeItem('customInfo', 'Test Info 1␞June 18 2026 11:59PM EST␝Test Info 2␞1/1/2100');
     let keep = '';
     let customInfo = getItem('customInfo') || '';
@@ -222,18 +263,22 @@ function setup() {
     storeItem('customInfo', keep);
   
     info.sort( (a,b) => {
-      if(a.type == b.type)
-          return a.time - b.time;
-      else
-          return a.type == 'countup' ? 1 : -1;
+      if(a.theme == undefined && b.theme == undefined || a.theme != undefined && b.theme != undefined ) {
+        if(a.type == b.type)
+            return a.time - b.time;
+        else
+            return a.type == 'countup' ? 1 : -1;
+      } else {
+        return a.theme === undefined ? -1 : 1;
+      }
     });
   
     const divs = document.getElementById('divs')
     let allUpdates = [];
-  
-    for(let {title, type, time} of info) {
+    for(let {title, type, time, theme} of info) {
         const panel = document.createElement('div');
         panel.classList.add('item');
+        if(theme !== undefined) panel.classList.add(theme);
         const panelTitle = document.createElement('h2');
         const panelSubTitle = document.createElement('h4');
         const panelBody = document.createElement('p');
@@ -251,13 +296,13 @@ function setup() {
         panelSubTitle.innerHTML = `(${time.toLocaleDateString('en-us')} at ${timeString})`;
         
         let updateBody;
+        panel.classList.add('removable');
         if(type == 'countup') {
             updateBody = () => {
                 let {years, months, days, hours, minutes, seconds} = breakDate(time, new Date());
                 panelBody.innerHTML = `${years} year${years == 1 ? '':'s'}, ${months} month${months == 1 ? '':'s'}, ${days} day${days == 1 ? '':'s'}, ${hours} hour${hours == 1 ? '':'s'}, ${minutes} minute${minutes == 1 ? '':'s'}, ${seconds} second${seconds == 1 ? '':'s'}`;
             }
         } else {
-          panel.classList.add('removable');
             updateBody = () => {
                 let {years, months, days, hours, minutes, seconds} = breakDate(new Date(), time);
                 panelBody.innerHTML = `${years} year${years == 1 ? '':'s'}, ${months} month${months == 1 ? '':'s'}, ${days} day${days == 1 ? '':'s'}, ${hours} hour${hours == 1 ? '':'s'}, ${minutes} minute${minutes == 1 ? '':'s'}, ${seconds} second${seconds == 1 ? '':'s'}`;

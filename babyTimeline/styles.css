@@ -56,6 +56,57 @@ input {
     border-radius: 5px;
 }
 
+.halloween {
+  background-color: #000000;
+  border: 10px solid #f8820d;
+  color:rgb(255, 230, 137);
+  font-family: "Creepster", system-ui;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.halloween > .trash-icon {
+  background:rgb(208, 139, 41);
+}
+
+.halloween > .trash-icon:hover {
+  background:rgb(152, 100, 26);
+}
+
+.christmas {
+  background-color: #206e3e;
+  border: 10px solid #f73d3d;
+  color:rgb(199, 255, 229);
+  font-family: "Mountains of Christmas", serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.christmas > .trash-icon {
+  background:rgb(255, 93, 93);
+}
+
+.christmas > .trash-icon:hover {
+  background:rgb(207, 66, 66);
+}
+
+.birthday {
+  background-color: #82f5ff;
+  border: 10px solid #f9ff8b;
+  color:rgb(0, 4, 28);
+  font-family: "Happy Monkey", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.birthday > .trash-icon {
+  background:rgb(255, 93, 93);
+}
+
+.birthday > .trash-icon:hover {
+  background:rgb(207, 66, 66);
+}
+
 .trash-icon {
     position: absolute;
     right: 10px;
