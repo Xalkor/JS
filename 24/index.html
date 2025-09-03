@@ -87,9 +87,19 @@ const OPS = [{
     func: (a, b) => a * b,
     isCommutative: true
   },
-  {
+  /*{
     char: '/',
     func: (a, b) => a / b,
+    isCommutative: false
+  },*/
+  {
+    char: '/',
+    func: (a, b) => {
+      if(a >= b)
+        return Math.floor(a / b);
+      else
+        return NaN;
+    }
     isCommutative: false
   }
 ];
@@ -177,5 +187,6 @@ function myprint(x) {
 }</script>
 
 </html>
+
 
 
