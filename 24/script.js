@@ -86,7 +86,8 @@ runButton.onclick = (event) => {
   let val4 = +textArea4.value.trim();
   let val5 = +textArea5.value.trim();
 
-  vals = [val1, val2, val3, val4];
+  //vals = [val1, val2, val3, val4];
+  vals = [8,8,8,8,8]
   //combinations(vals, OPS, 24);
   findAllEqN(vals, val5);
   if (consoleList.innerHTML == "") print('No Solutions');
@@ -157,4 +158,5 @@ function print(x) {
   let textnode = document.createTextNode(x);
   li.appendChild(textnode);
   consoleList.appendChild(li);
+
 }
