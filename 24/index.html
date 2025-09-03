@@ -7,6 +7,8 @@
 <span> ? </span>
 <textArea id="textArea4" style="text-align: CENTER;resize: none;width:45px;height:25px"></textArea>
 <span> = </span>
+<textArea id="textArea4.5" style="text-align: CENTER;resize: none;width:45px;height:25px"></textArea>
+<span> = </span>
 <textArea id="textArea5" style="text-align: CENTER;resize: none;width:65px;height:25px">24</textArea>
 <button id='runButton'>find solutions</button>
 <ul id='consoleList'></ul>
@@ -15,6 +17,7 @@
 const textArea2 = document.getElementById('textArea2');
 const textArea3 = document.getElementById('textArea3');
 const textArea4 = document.getElementById('textArea4');
+const textArea4_5 = document.getElementById('textArea4.5');
 const textArea5 = document.getElementById('textArea5');
 
 const runButton = document.getElementById('runButton');
@@ -34,7 +37,7 @@ function findAllEqN(nums, n) {
     equations(nums, s, n);
   }
   for (let eq of s) {
-    print(eq);
+    myprint(eq);
   }
 }
 
@@ -97,12 +100,13 @@ runButton.onclick = (event) => {
   let val2 = +textArea2.value.trim();
   let val3 = +textArea3.value.trim();
   let val4 = +textArea4.value.trim();
+  let val4_5 = +textArea4_5.value.trim();
   let val5 = +textArea5.value.trim();
 
-  vals = [val1, val2, val3, val4];
+  vals = [val1, val2, val3, val4, val4_5];
   //combinations(vals, OPS, 24);
   findAllEqN(vals, val5);
-  if (consoleList.innerHTML == "") print('No Solutions');
+  if (consoleList.innerHTML == "") myprint('No Solutions');
 };
 
 function copy(arr) {
@@ -158,14 +162,14 @@ function lexoOrder(vals) {
 //         for (let k = 0; k < ops.length; k++) {
 //           let value = ops[k].func(ops[j].func(ops[i].func(vals[0], vals[1]), vals[2]), vals[3]);
 //           let s = ('(((' + vals[0] + ' ' + ops[i].char + ' ' + vals[1] + ') ' + ops[j].char + ' ' + vals[2] + ') ' + ops[k].char + ' ' + vals[3] + ') = ' + value);
-//           if (eq == value) print(s);
+//           if (eq == value) myprint(s);
 //         }
 //       }
 //     }
 //   }
 // }
 
-function print(x) {
+function myprint(x) {
   let li = document.createElement("LI");
   let textnode = document.createTextNode(x);
   li.appendChild(textnode);
@@ -173,3 +177,4 @@ function print(x) {
 }</script>
 
 </html>
+
