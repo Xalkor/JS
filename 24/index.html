@@ -95,7 +95,7 @@ const OPS = [{
   {
     char: '/',
     func: (a, b) => {
-      if(a >= b)
+      if(a >= b && a % b == 0)
         return Math.floor(a / b);
       else
         return NaN;
@@ -187,6 +187,7 @@ function myprint(x) {
 }</script>
 
 </html>
+
 
 
 
